@@ -1,0 +1,4 @@
+# .gitignore
+# Do not ignore node_modules for GitHub Actions
+# node_modules/
+node_modules
