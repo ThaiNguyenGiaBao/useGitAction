@@ -6,7 +6,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: Hello world action step
-        id: hello
+        id: hellocc
         uses: ThaiNguyenGiaBao/customGitAction@v1.1
         with:
           who-to-greet: 'Gia bao'
