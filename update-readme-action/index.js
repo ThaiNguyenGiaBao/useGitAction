@@ -16,7 +16,6 @@ const data = {
   activeMembers: "",
   publicRepositories: "",
   programmingLanguages: [],
-  frameworks: [],
   followers: "",
   contributors: "",
   recentAdditions: "",
@@ -258,7 +257,6 @@ ${data.description}
 - Active Members: ${data.activeMembers}
 - Public Repositories: ${data.publicRepositories}
 - Programming Languages: ${data.programmingLanguages.join(", ")}
-- Frameworks: ${data.frameworks.join(", ")}
 
 ## Followers
 ${data.followers}
