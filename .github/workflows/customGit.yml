@@ -1,4 +1,4 @@
-name: "Run Custom Action"
+name: "Run Customd Action"
 on:
   pull_request:
     types: [opened, synchronize, reopened]
