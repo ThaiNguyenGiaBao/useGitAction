@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
+    - cron: "0 0 * * *" # Runs daily at midnight
   push:
     branches:
       - main
@@ -18,18 +18,18 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
-        
+          node-version: "12"
+
       - name: Install dependencies
         run: npm install
 
       - name: Use custom action to update README
         uses: ./update-readme-action
         with:
-          org-names: 'org1,org2,org3'
+          org-names: "org1,org2,org3"
           token: ${{ secrets.TOKEN }}
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Commit changes
         run: |
@@ -39,4 +39,4 @@ jobs:
           git commit -m 'Update README with org repo data'
           git push
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
