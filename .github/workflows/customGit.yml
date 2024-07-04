@@ -1,21 +1,20 @@
-on: [push]
+name: "Run Custom Action"
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-    - name: Checkout
-      id: checkout
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Run my Action
-      id: run-action
-      uses: ThaiNguyenGiaBao/customAction@v1 # Commit with the `v1` tag
-      with:
-        milliseconds: 1000
-
-    - name: Print Output
-      id: output
-      run: echo "${{ steps.run-action.outputs.time }}"
-      
+      - name: Run Custom Action
+        uses: ThaiNguyenGiaBao/customAction@v1.0.0
+        with:
+          milliseconds: 1000
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pr_number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.GITHUB_TOKEN }}
