@@ -8,7 +8,56 @@ const octokit = new Octokit({
 });
 
 const orgName = core.getInput("org-name");
-const data = {};
+const data = {
+  name: "",
+  founded: "",
+  description: "",
+  avarta: "",
+  activeMembers: "",
+  publicRepositories: "",
+  programmingLanguages: [],
+  frameworks: [],
+  followers: "",
+  contributors: "",
+  recentAdditions: "",
+  stargazersEvolution: {
+    total: "",
+    newPerDay: "",
+  },
+  codingHabits: {
+    activeHours: "",
+    recentlyUsedLanguages: "",
+  },
+  topRepositories: [],
+  repositoryStats: {
+    totalStars: "",
+    totalForks: "",
+    totalOpenIssues: "",
+    totalClosedIssues: "",
+  },
+  growthTrends: "",
+  issueResolutionTime: "",
+  recentActivity: {
+    pushEvents: [],
+    issueEvents: [],
+    pullRequestEvents: [],
+    codingHabits: {
+      morning: 29,
+      afternoon: 91,
+      evening: 1,
+      night: 29,
+    },
+  },
+  highActivityPeriods: "",
+  topEngagement: "",
+  contact: "",
+  githubUrl: "",
+  socialMedia: {
+    twitter: "",
+    linkedin: "",
+    facebook: "",
+  },
+};
 
 const { data: orgData } = await octokit.orgs.get({ org: orgName });
 const { data: members } = await octokit.orgs.listMembers({ org: orgName });
@@ -196,6 +245,5 @@ await getOrganizationDetails();
 //await getCommunityStats();
 await getRepoStats();
 await recentActivity();
-
 
 fs.writeFileSync("README.md", JSON.stringify(data, null, 2));
