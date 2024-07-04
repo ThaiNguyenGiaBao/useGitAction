@@ -318,4 +318,4 @@ ${data.githubUrl}
 - Facebook: ${data.socialMedia.facebook}
 `;
 
-fs.writeFileSync("README.md", JSON.stringify(readmeContent, null, 2));
+fs.writeFileSync("README.md", readmeContent);
