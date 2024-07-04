@@ -27,9 +27,9 @@ jobs:
         uses: ./update-readme-action
         with:
           org-names: 'org1,org2,org3'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
 
       - name: Commit changes
         run: |
@@ -39,4 +39,4 @@ jobs:
           git commit -m 'Update README with org repo data'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
