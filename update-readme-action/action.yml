@@ -1,10 +1,6 @@
 name: 'Update README with Org Repo Data'
 description: 'Crawls organization data using @octokit/rest and updates README.md'
 inputs:
-  org-names:
-    description: 'Comma-separated list of organization names'
-    required: true
-    default: 'org1,org2,org3'
   token:
     description: 'GitHub token'
     required: true

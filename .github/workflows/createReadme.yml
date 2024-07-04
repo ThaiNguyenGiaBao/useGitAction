@@ -28,7 +28,7 @@ jobs:
       - name: Use custom action to update README
         uses: ./update-readme-action
         with:
-          org-names: "org1,org2,org3"
+          org-names: "TickLabVN"
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

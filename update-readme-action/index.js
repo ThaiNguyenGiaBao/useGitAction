@@ -31,7 +31,7 @@ async function updateReadme() {
     const data = await getOrgRepoData(org);
     readmeContent += `## ${data.orgName}\n- Repositories: ${data.repoCount}\n\n`;
   }
-  console.log(readmeContent);
+  
   fs.writeFileSync("README.md", readmeContent);
 }
 
