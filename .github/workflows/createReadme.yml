@@ -1,5 +1,7 @@
 name: Update READMEx
 
+permissions: write-all
+
 on:
   schedule:
     - cron: "0 0 * * *" # Runs daily at midnight
@@ -30,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
