@@ -273,7 +273,6 @@ ${data.recentAdditions}
 
 ## Coding Habits
 - Active Hours: ${data.codingHabits.activeHours}
-- Recently Used Languages: ${data.codingHabits.recentlyUsedLanguages.join(", ")}
 
 ## Top Repositories
 ${data.topRepositories.map((repo) => `- ${repo}`).join("\n")}
