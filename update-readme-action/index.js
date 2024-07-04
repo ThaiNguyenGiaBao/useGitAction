@@ -1,6 +1,10 @@
-const { Octokit } = require("@octokit/rest");
-const fs = require("fs");
-const core = require("@actions/core");
+// const { Octokit } = require("@octokit/rest");
+// const fs = require("fs");
+// const core = require("@actions/core");
+
+import { Octokit } from "@octokit/rest";
+import fs from "fs";
+import core from "@actions/core";
 
 // Create an instance of Octokit
 const octokit = new Octokit({
